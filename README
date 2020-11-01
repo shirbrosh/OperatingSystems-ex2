@@ -1,0 +1,46 @@
+inbar.ziter, shir_brosh
+inbar ziter (205790504), shir brosh (316124767)
+EX: 2
+
+FILES:
+Thread.h
+Thread.cpp
+Scheduler.h
+Scheduler.cpp
+uthreads.cpp
+makefile
+
+REMARKS:
+
+ANSWERS:
+Part 2: Theoretical Questions
+
+Question1:
+if an operating systems does not support multithreading at kernel-level we can create the
+multithreading ability by using user-level threads - by running at the same time several threads.
+user-level threads are a reasonable choice for my example because that way we are creating a
+system functionality that is not supported with user-level threads.
+
+Question2:
+advantages-
+    1. if an error causing a fail accord in one tab, and several tabs were under the same process,
+    it would have failed them all. separate processes are protected from each other.
+    2. opening a new process means a new memory as process do not share memory.
+
+disadvantages-
+    1. as opposed to the first advantage, it can also came as a disadvantage- when opening the same
+    website in two different tabs, the process have to load everything again.
+    2. processes have higher overhead, compered to kernel-level threads.
+
+Question3:
+When the command kill is called in the terminal, it creates a kill system-call witch creates an
+interrupt, witch causes a trap and enables the OS to send signals to the process, with the relevant
+pid. The signals are SIGKILL or SIGTERM, where SIGKILL can not be caught by the handler and SIGTERM
+can. The signals quit the process immediately.
+
+Question4:
+'real' time is the time passed in the real world, with no relations to the computer, while 'virtual'
+time is the time passed in the process running time.
+    - example for using 'real' time- when we want a process to run at a selected time- for instance
+    choosing a time for a windows update.
+    - example for using 'virtual' time- when we want to measure or analyze a specific process.
